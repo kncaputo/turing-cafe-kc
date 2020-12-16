@@ -12,6 +12,14 @@ class Form extends Component {
     }
   }
 
+  handleChange = (event) => {
+    
+  }
+  
+  submitRes = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <section>
@@ -43,10 +51,12 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button onClick={}>
+        <button onClick={this.submitRes}>
           Submit
         </button>
       </section>
     )
   }
 }
+
+export default Form;
