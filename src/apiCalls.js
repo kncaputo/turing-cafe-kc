@@ -1,6 +1,6 @@
 export const fetchReservations = () => {
   return fetch('http://localhost:3001/api/v1/reservations')
-  .then(() => {
+  .then((response) => {
     if (!response.ok) {
       throw Error('Failed to fetch reservations')
     }
