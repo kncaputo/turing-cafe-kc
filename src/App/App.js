@@ -43,13 +43,19 @@ class App extends Component {
     this.setState({ reservations: [reservation, ...this.state.reservations]})
   }
   
-  cancelReservation = (event) => {
-    const onSuccess = () => {
-      alert('Reservation deleted')
-    }
+  // cancelReservation = (event) => {
+  //   const id = event.target.id;
 
-    deleteReservation(event.target.id, onSuccess)
-  }
+  //   const onSuccess = () => {
+  //     alert('Reservation deleted')
+  //     const filteredReservations = this.state.reservations.filter(res => {
+  //       return res.id !== id
+  //     })
+  //     this.setState({ reservations: [filteredReservations] })
+  //   }
+
+  //   deleteReservation(id, onSuccess);
+  // }
 
   render() {
     return (
