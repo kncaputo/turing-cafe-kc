@@ -3,12 +3,12 @@ import './Card.css'
 
 const Card = ({ key, name, date, time, number }) => {
   return (
-    <section>
+    <section className='card'>
       <h1>{name}</h1>
       <p>{date}</p>
       <p>{time} pm</p>
       <p>Party of {number}</p>
-      <button>CANCEL</button>
+      <button className='cancel-btn'>CANCEL</button>
     </section>
   )
 }
