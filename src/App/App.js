@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchReservations, postReservation } from '../apiCalls';
+import { deleteReservation, fetchReservations, postReservation } from '../apiCalls';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 import './App.css';
@@ -22,12 +22,13 @@ class App extends Component {
     return this.state.reservations.map(res => {
       return (
         <Card
-          key={res.id}
           id={res.id}
           name={res.name}
           date={res.date}
           time={res.time}
           number={res.number}
+          cancelReservation={this.cancelReservation}
+          key={res.id}
         />
       )
     })
@@ -40,6 +41,14 @@ class App extends Component {
 
     postReservation(reservation, onSuccess)
     this.setState({ reservations: [reservation, ...this.state.reservations]})
+  }
+  
+  cancelReservation = (event) => {
+    const onSuccess = () => {
+      alert('Reservation deleted')
+    }
+
+    deleteReservation(event.target.id, onSuccess)
   }
 
   render() {

@@ -27,3 +27,19 @@ export const postReservation = (reservation, onSuccess) => {
   .then(() => onSuccess())
   .catch(error => console.log(error))
 }
+
+export const deleteReservation = (id, onSuccess) => {
+  return fetch(`${endpoint}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify()
+  })
+    .then(response => response.json())
+    .then(json => {
+    console.log(json);
+    onSuccess();
+  })
+  .catch(err => console.log(err))
+}
