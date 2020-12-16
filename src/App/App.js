@@ -22,11 +22,12 @@ class App extends Component {
     return this.state.reservations.map(res => {
       return (
         <Card
-        key={res.id}
-        name={res.name}
-        date={res.date}
-        time={res.time}
-        number={res.number}
+          key={res.id}
+          id={res.id}
+          name={res.name}
+          date={res.date}
+          time={res.time}
+          number={res.number}
         />
       )
     })
