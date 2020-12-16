@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchReservations } from '../apiCalls';
+import { fetchReservations, postReservation } from '../apiCalls';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 import './App.css';
@@ -33,7 +33,12 @@ class App extends Component {
   }
 
   createNewReservation = (reservation) => {
-    
+    const onSuccess = () => {
+      alert('Reservation booked')
+    }
+
+    postReservation(reservation, onSuccess)
+    this.setState({ reservations: [reservation, ...this.state.reservations]})
   }
 
   render() {
