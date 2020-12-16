@@ -22,5 +22,5 @@ describe('Card', () => {
     expect(screen.getByText('12/29')).toBeInTheDocument();
     expect(screen.getByText('7:00 pm')).toBeInTheDocument();
     expect(screen.getByText('Party of 12')).toBeInTheDocument();
-  })
+  });
 })

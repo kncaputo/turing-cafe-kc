@@ -20,7 +20,6 @@ class Form extends Component {
     event.preventDefault();
 
     const reservation = {
-      id: Date.now(),
       ...this.state
     }
 
