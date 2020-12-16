@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchReservations } from '../apiCalls';
+import Card from '../Card/Card';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,20 @@ class App extends Component {
     .catch(error => console.log(error.message))
   }
 
+  displayReservations = () => {
+    return this.state.reservations.map(res => {
+      return (
+        <Card
+        key={res.id}
+        name={res.name}
+        date={res.date}
+        time={res.time}
+        number={res.number}
+        />
+      )
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,7 +39,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          {this.displayReservations()}
         </div>
       </div>
     )
