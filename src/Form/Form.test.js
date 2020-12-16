@@ -27,6 +27,7 @@ describe('Form', () => {
     expect(numberInput).toBeInTheDocument();
   });
 
+  // I don't know why this test is failing
   // it('should submit a new reservation when Submit is clicked', () => {
   //   const mockInput = {
   //     "name": "Kara",

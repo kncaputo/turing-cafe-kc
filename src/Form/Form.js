@@ -19,9 +19,7 @@ class Form extends Component {
   submitRes = (event) => {
     event.preventDefault();
 
-    const reservation = {
-      ...this.state
-    }
+    const reservation = {...this.state}
 
     this.props.createNewReservation(reservation);
     this.clearInputs();
@@ -62,7 +60,7 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button onClick={this.submitRes}>
+        <button onClick={event => this.submitRes(event)}>
           Submit
         </button>
       </section>
